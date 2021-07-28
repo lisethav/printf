@@ -3,7 +3,7 @@
  * pr_char - Type char
  *
  * @arg: arguments
- * Return: 0. On Error: -1
+ * Return: 0.
 */
 int pr_char(va_list arg) /* if (*p == 'c')*/
 {
@@ -14,7 +14,7 @@ int pr_char(va_list arg) /* if (*p == 'c')*/
 	if (arg == NULL)
 	{
 		write(1, "Error\n", 6);
-		exit(-1);
+		return (0);
 	}
 	s = &value;
 	write(1, s, 1);
@@ -24,17 +24,17 @@ int pr_char(va_list arg) /* if (*p == 'c')*/
  * pr_string - string of chars
  *
  * @arg: arguments
- * Return: 0. On Error: -1
+ * Return: 0.
 */
 int pr_string(va_list arg) /* if (*p == 's')*/
 {
 	char *s;
 
 	s = va_arg(arg, char *);
-	if (arg == NULL)
+	if (s == NULL)
 	{
-		write(1, "Error\n", 6);
-		exit(-1);
+		write(1, "Error\n", 6); /*string = NULL*/
+		return (0);
 	}
 	write(1, s, _strlen(s));
 	return (0);
@@ -43,7 +43,7 @@ int pr_string(va_list arg) /* if (*p == 's')*/
  * pr_perc - Type % specifier function
  *
  * @arg: argument
- * Return: 1. On Error: -1
+ * Return: 1.
  */
 int pr_perc(va_list __attribute__((unused))arg) /* if (*p == '%') */
 {

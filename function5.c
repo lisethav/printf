@@ -3,7 +3,7 @@
  * pr_R - Unknown
  * @arg: arguments
  *
- * Return: prints %r. On Error: -1
+ * Return: prints %r.
 */
 int pr_R(va_list arg) /* if (*p == 'r')*/
 {
@@ -13,7 +13,7 @@ int pr_R(va_list arg) /* if (*p == 'r')*/
 	if (arg == NULL)
 	{
 		write(1, "Error\n", 6);
-		exit(-1);
+		return (0);
 	}
 	buffer[0] = '%';
 	buffer[1] = 'r';

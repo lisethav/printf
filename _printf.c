@@ -8,19 +8,22 @@
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int count_char; /*count the amount of chars*/
+	int count_char = 0; /*count the amount of chars*/
 	const char *p;
 	int i = 0;
 
-	op_t print[] = {
-		{'c', pr_char}, {'s', pr_string}, {'%', pr_perc},
+	op_t print[] = {{'c', pr_char}, {'s', pr_string}, {'%', pr_perc},
 		{'d', pr_di}, {'i', pr_di}, {'u', pr_ui}, {'\0', pr_zero},
 		{'o', pr_o}, {'r', pr_R}, {'x', pr_x}, {'X', pr_X}};
-
 	va_start(arg, format);
 	if (format == NULL)
 	{
 		write(1, "Error\n", 6);
+		exit(-1);
+	}
+	if (*format == '\0')
+	{
+		write(1, "vacío\0", 6);
 		exit(-1);
 	}
 	for (p = format; *p != '\0'; p++) /*p points to format address*/
@@ -42,5 +45,6 @@ int _printf(const char *format, ...)
 			}
 		}
 	}
+	va_end(arg);
 	return (count_char);
 }
