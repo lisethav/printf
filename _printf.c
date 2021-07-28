@@ -12,34 +12,30 @@ int _printf(const char *format, ...)
 	const char *p;
 	int i = 0;
 
-	if (format != NULL)
-	{
-		op_t print[] = {
-			{'c', pr_char}, {'s', pr_string}, {'%', pr_perc},
-			{'d', pr_di}, {'i', pr_i}, {'u', pr_ui},
-			{'o', pr_o}, {'x', pr_x}, {'X', pr_X}};
+	op_t print[] = {
+		{'c', pr_char}, {'s', pr_string}, {'%', pr_perc},
+		{'d', pr_di}, {'i', pr_di}, {'u', pr_ui},
+		{'o', pr_o}, {'x', pr_x}, {'X', pr_X}};
 
-		va_start(arg, format);
-		for (p = format; *p != '\0'; p++) /*p points to format address*/
+	va_start(arg, format);
+	for (p = format; *p != '\0'; p++) /*p points to format address*/
+	{
+		if (*p != '%')
 		{
-			if (*p != '%')
+			write(1, p, 1);
+			count_char++;
+		}
+		else
+		{
+			p++;
+			i = 0;
+			while (i < 9)
 			{
-				write(1, p, 1);
-				count_char++;
-			}
-			else
-			{
-				p++;
-				while (i < 9)
-				{
-					if (*p == print[i].op)
-						count_char = count_char + print[i].f(arg);
-					i++;
-				}
+				if (*p == print[i].op)
+					count_char = count_char + print[i].f(arg);
+				i++;
 			}
 		}
-	return (count_char);
 	}
-	write(1, "Error\n", 5);
-	exit(-1);
+	return (count_char);
 }

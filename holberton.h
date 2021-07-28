@@ -29,7 +29,6 @@ int pr_char(va_list arg);
 int pr_string(va_list arg);
 int pr_perc(va_list arg);
 int pr_di(va_list arg);
-int pr_i(va_list arg);
 int pr_ui(va_list arg);
 int pr_o(va_list arg);
 int pr_x(va_list arg);

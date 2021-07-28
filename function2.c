@@ -5,7 +5,7 @@
  * @arg: arguments
  * Return: 0
  */
-int pr_di(va_list arg) /*if (*p == 'd' */
+int pr_di(va_list arg) /*if (*p == 'd' || *p == 'i' */
 {
 	int i;
 	char buffer[1024];

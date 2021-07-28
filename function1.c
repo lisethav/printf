@@ -8,9 +8,11 @@
 int pr_char(va_list arg) /* if (*p == 'c')*/
 {
 	char *s;
+	char value;
 
-	s = va_arg(arg, char *); /*extracts int arg & stores as char type*/
-	write(1, s, 1);
+	value = va_arg(arg, int); /*extracts int arg & stores as char type*/ 
+	s = &value; 
+	write(1, s, 1); 
 	return (0);
 }
 /**
@@ -33,11 +35,12 @@ int pr_string(va_list arg) /* if (*p == 's')*/
  * @arg: argument
  * Return: 1
  */
-int pr_perc(va_list arg) /* if (*p == '%') */
+int pr_perc(va_list __attribute__((unused))arg) /* if (*p == '%') */
 {
 	char *s;
+	char value = '%';
 
-	s = va_arg(arg, char *);
+	s = &value;
 	write(1, s, 1);
 	return (1);
 }
