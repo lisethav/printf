@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
-#include "holberton.h"
+#include <limits.h>
 
 /*Structs*/
 /**
