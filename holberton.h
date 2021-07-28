@@ -33,6 +33,9 @@ int pr_ui(va_list arg);
 int pr_o(va_list arg);
 int pr_x(va_list arg);
 int pr_X(va_list arg);
-
-char * _itoa( int, char *, int);
+int pr_zero(va_list arg);
+int pr_R(va_list arg);
+char *_strcat(char *dest, char *src);
+int _strlen(char *s);
+char *_itoa(int, char *, int);
 #endif

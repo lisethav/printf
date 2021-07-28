@@ -3,7 +3,7 @@
  * _printf - function print to the string with parameters
  *
  * @format: the string that contains the text to be written to stdout
- * Return: the number of characters printed. Error: -1
+ * Return: the number of characters printed. on Error: -1
  */
 int _printf(const char *format, ...)
 {
@@ -14,10 +14,15 @@ int _printf(const char *format, ...)
 
 	op_t print[] = {
 		{'c', pr_char}, {'s', pr_string}, {'%', pr_perc},
-		{'d', pr_di}, {'i', pr_di}, {'u', pr_ui},
-		{'o', pr_o}, {'x', pr_x}, {'X', pr_X}};
+		{'d', pr_di}, {'i', pr_di}, {'u', pr_ui}, {'\0', pr_zero},
+		{'o', pr_o}, {'r', pr_R}, {'x', pr_x}, {'X', pr_X}};
 
 	va_start(arg, format);
+	if (format == NULL)
+	{
+		write(1, "Error\n", 6);
+		exit(-1);
+	}
 	for (p = format; *p != '\0'; p++) /*p points to format address*/
 	{
 		if (*p != '%')
@@ -29,7 +34,7 @@ int _printf(const char *format, ...)
 		{
 			p++;
 			i = 0;
-			while (i < 9)
+			while (i < 11)
 			{
 				if (*p == print[i].op)
 					count_char = count_char + print[i].f(arg);

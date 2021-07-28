@@ -20,17 +20,17 @@ int pr_ui(va_list __attribute__((unused))arg) /*if (*p == 'u')*/
 	{
 		i = (int) ui;
 		s = _itoa(i, buffer, 10);
-		size_write = strlen(s);
+		size_write = _strlen(s);
 	}
 	else
 	{
 		i = (int) (ui / 1000000000);
 		s = _itoa(i, buffer, 10);
-		size_write = strlen(s);
+		size_write = _strlen(s);
 		i = (int) (ui - ((unsigned int) i) * 1000000000);
 		_itoa(i, buffer_tmp, 10);
-		strcat(buffer, buffer_tmp);
-		size_write = strlen(buffer);
+		_strcat(buffer, buffer_tmp);
+		size_write = _strlen(buffer);
 	}
 	write(1, s, size_write);
 	return (0);
