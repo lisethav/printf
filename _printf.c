@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	{
 		op_t print[] = {
 			{'c', pr_char}, {'s', pr_string}, {'%', pr_perc},
-			{'d', pr_di}, {'i', pr_di}, {'u', pr_ui},
+			{'d', pr_di}, {'i', pr_i}, {'u', pr_ui},
 			{'o', pr_o}, {'x', pr_x}, {'X', pr_X}};
 
 		va_start(arg, format);
