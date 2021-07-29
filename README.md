@@ -19,6 +19,12 @@ The printf() function is of variable type, that is, it can receive an indefinite
 
 More types of combinations are possible using the specifiers, to print strings, integers and more.
 
+## _Compilation_ 🔗
+
+- Your code will be compiled this way: ```$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c```
+- The main file must include its main header file (holberton.h): ```#include holberton.h```
+- Important, be careful not to place any c file other than main, because when compiling, this file will also be included.
+
 ## _Specifiers_ ▶️
 The format specifiers set the output format of the arguments.
 The simplest way to write a format specifier is with the character (%) followed by a conversion character indicating the data type of the argument.
@@ -53,9 +59,24 @@ The files contained in this repository.
 | [_itoa.c] | Integer to convert into string |
 | [holberton.h] | Header file containing structure definitions, prototype functions and standard libraries. |
 
+## _Installation_ ⚙️
+To use this custom _printf function follow the steps below:
+ - Clone the repository
+ ```$ git clone https://github.com/lisethav/printf```
+- Enter the printf folder
+```$ cd printf```
+- To convert all .c files to objetc (.o) files at once, this script is applied at the prompt (with or without flags):
+```$ gcc  -Wall -Wextra -Werror -pedantic *.c your_C_source_code -o output ```
+- Or create a static library, for use on different occasions.
+```gcc  -Wall -Wextra -Werror -pedantic *.c```
+```ar -rc lib_printf.a *.o```
+```ranlib lib_printf.a ```
+- And now that the library is ready, you must compile it like this
+-```$ gcc main.c -L. -l_printf -o output```
 ## _Flowchart_ ✨
 This is the flowchart of our code _printf().
 -
+
 [![Untitled-Diagram-1.png](https://i.postimg.cc/NFhfkkGy/Untitled-Diagram-1.png)](https://postimg.cc/zbjrJWg5)
 
 ## License
