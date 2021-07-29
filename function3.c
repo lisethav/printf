@@ -7,10 +7,10 @@
  */
 int pr_x(va_list arg) /* if (*p == 'x')*/
 {
-	int i;
+	unsigned int i;
 	char buffer[1024];
 
-	i = va_arg(arg, int);
+	i = va_arg(arg, unsigned int);
 	if (arg == NULL)
 	{
 		write(1, "Error\n", 6);
@@ -18,7 +18,7 @@ int pr_x(va_list arg) /* if (*p == 'x')*/
 	}
 	_itoa(i, buffer, 16); /*here 16 means hexadecimal*/
 	write(1, buffer, _strlen(buffer));
-	return (0);
+	return (_strlen(buffer));
 }
 
 /**
@@ -55,5 +55,5 @@ int pr_X(va_list arg) /*if (*p == 'X')*/
 			buffer[j] = 'F';
 	}
 	write(1, buffer, _strlen(buffer));
-	return (0);
+	return (_strlen(buffer));
 }

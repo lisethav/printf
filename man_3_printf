@@ -1,0 +1,48 @@
+
+NAME
+    _printf()
+    Allows the display of numeric values, characters and text strings on the screen.
+    
+SYNOPSIS
+    #include "holberton.h"
+
+    printf format output conversion [ARGUMENT]...
+    int _printf(const char *format, ...)
+
+DESCRIPTION
+    Print ARGUMENT(s) according to FORMAT, FORMAT controls the output as in C _printf.
+    In the control string we indicate how the subsequent arguments will be displayed. We can also enter a text string (without arguments), or combine both possibilities, as well as escape sequences.
+    
+    In case we use arguments we must indicate in the control string as many modifiers as arguments we are going to present.
+    The modifier is composed of the % character followed by a conversion character, which indicates what type of data it is.
+    
+    FORMAT controls the output as in C printf. Interpreted sequences are:
+    %c A single character
+    %% A single character %
+    %d A signed integer, in decimal base
+    %i A signed integer, in decimal base
+    %u An unsigned integer, in decimal base
+    %o An integer in octal base
+    %x An integer in hexadecimal base
+    %X An integer in hexadecimal base %x An integer in hexadecimal base
+    %s A character string
+    %p A memory pointer or address
+
+
+EXAMPLES
+    /* Use of the _printf() statement 1.
+
+	#include "holberton.h"
+
+	main() /* Output to screen integers */
+	{
+		int a=20, b=10;
+		_printf("The value of a is %d",a);
+		_printf("The value of b is %d\n",b);
+	}
+
+AUTHOR
+   Written by Eylen Sanchez and Liseth Arias.
+
+COPYRIGHT
+    Copyright © 2021 Free Software.

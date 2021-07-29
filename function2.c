@@ -22,8 +22,8 @@ int pr_di(va_list arg) /*if (*p == 'd' || *p == 'i' */
 		write(1, buffer, _strlen(buffer)); /*strlen: long of buffer*/
 	}
 	else
-		write(1, "0", 1 );
-	return (0);
+	write(1, "0", 1);
+	return (1);
 }
 /**
  * pr_o - Signed octal
@@ -45,5 +45,5 @@ int pr_o(va_list arg) /*if (*p == 'o')*/
 	}
 	s = _itoa(i, buffer, 8); /*converts integer 10 to octal*/
 	write(1, s, _strlen(s));
-	return (0);
+	return (_strlen(s));
 }

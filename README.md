@@ -1,11 +1,11 @@
-# _PRINTF()
-## Implementation of a printf() in C
+# _PRINTF() 🖨️
+## Implementation of a printf() in C ⬅️
 
 In this project we implement a function similar to printf(), from the standard  library <stdio.h>.
 
 The printf() function is of variable type, that is, it can receive an indefinite number of arguments, following the format pointer.
 
-## _Examples of_ __printf() usage_
+## _Examples of_ __printf() usage_ 🖥️
 
 **General code:** ```_printf("formating string", arg1, arg2, ...);```
 
@@ -19,7 +19,7 @@ The printf() function is of variable type, that is, it can receive an indefinite
 
 More types of combinations are possible using the specifiers, to print strings, integers and more.
 
-## _Specifiers_
+## _Specifiers_ ▶️
 The format specifiers set the output format of the arguments.
 The simplest way to write a format specifier is with the character (%) followed by a conversion character indicating the data type of the argument.
 
@@ -36,7 +36,7 @@ The simplest way to write a format specifier is with the character (%) followed 
 | %x | Unsigned hexadecimal integer; uses "ABCDEF". | 800003FF|
 
 
-## Files
+## _Files_ 📁
 
 The files contained in this repository.
 
@@ -44,14 +44,19 @@ The files contained in this repository.
 | ------ | ------ |
 |[_printf.c]| Main file of the _printf() function. Where the buffer is set up and other functions are called as the format string is traversed with the pointer. |
 | [function1.c] | Contains the character type specifier functions. These are %c, %s, %%. |
-| [function2.c] | Contains the integer type specifier functions. These are %d, %i, %u, %o. |
+| [function2.c] | Contains the integer type specifier functions. These are %d, %i, %o. |
 | [function3.c] | Contains the hexadecimal integer type specifier functions. These are %x, %X. |
+| [function4.c] | Contains the integer type specifier functions. These are %u. |
+| [function5.c] | Contains the hexadecimal integer type specifier functions Unknown. |
+| [_strcat.c] | Concatenates two strings |
+| [_strlen.c] | Computes the length of the string s. No inclue the null char |
+| [_itoa.c] | Integer to convert into string |
 | [holberton.h] | Header file containing structure definitions, prototype functions and standard libraries. |
 
-## Flowchart
-
-This is the flowchart of our code. (este flowchart es solo un ejemplo de cómo quedaría)
-[![1200px-Lamp-Flowchart-svg.png](https://i.postimg.cc/3xjNz7Nq/1200px-Lamp-Flowchart-svg.png)](https://postimg.cc/tsT9VKhd)
+## _Flowchart_ ✨
+This is the flowchart of our code _printf().
+-
+[![Untitled-Diagram-1.png](https://i.postimg.cc/NFhfkkGy/Untitled-Diagram-1.png)](https://postimg.cc/zbjrJWg5)
 
 ## License
 
@@ -63,8 +68,13 @@ Eylen Sanchez | Liseth Arias
 
 [//]: # (These are reference links used in the body of this note. - )
 
-   [_printf.c]: <https://github.com/EylenS/Assays/blob/main/_printf.c>
-   [function1.c]: <https://github.com/EylenS/Assays/blob/main/function1.c>
-   [function2.c]: <https://github.com/EylenS/Assays/blob/main/function2.c>
-   [function3.c]: <https://github.com/EylenS/Assays/blob/main/function3.c>
+   [_printf.c]: <https://github.com/lisethav/printf/blob/master/_printf.c>
+   [function1.c]: <https://github.com/lisethav/printf/blob/master/function1.c>
+   [function2.c]: <https://github.com/lisethav/printf/blob/master/function2.c>
+   [function3.c]: <https://github.com/lisethav/printf/blob/master/function3.c>
+   [function4.c]: <https://github.com/lisethav/printf/blob/master/function4.c>
+   [function5.c]: <https://github.com/lisethav/printf/blob/master/function4.c>
+   [_strcat.c]: <https://github.com/lisethav/printf/blob/master/_strcat.c>
+   [_strlen.c]: <https://github.com/lisethav/printf/blob/master/_strlen.c>
+   [_itoa.c]: <https://github.com/lisethav/printf/blob/master/_itoa.c>
    [holberton.h]: <https://github.com/EylenS/Assays/blob/main/holberton.h>

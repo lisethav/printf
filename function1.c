@@ -18,7 +18,7 @@ int pr_char(va_list arg) /* if (*p == 'c')*/
 	}
 	s = &value;
 	write(1, s, 1);
-	return (0);
+	return (1);
 }
 /**
  * pr_string - string of chars
@@ -37,7 +37,7 @@ int pr_string(va_list arg) /* if (*p == 's')*/
 		return (0);
 	}
 	write(1, s, _strlen(s));
-	return (0);
+	return (_strlen(s));
 }
 /**
  * pr_perc - Type % specifier function

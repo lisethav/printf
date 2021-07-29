@@ -33,7 +33,7 @@ int pr_ui(va_list __attribute__((unused))arg) /*if (*p == 'u')*/
 		size_write = _strlen(buffer);
 	}
 	write(1, s, size_write);
-	return (0);
+	return (size_write);
 }
 /**
  * pr_zero - When the users try _printf("%"), without indicator specifier
