@@ -15,14 +15,12 @@ int pr_di(va_list arg) /*if (*p == 'd' || *p == 'i' */
 		return (-1);
 	}
 	i = va_arg(arg, int);
-	printf("i: %d\n", i);
 	if (i == -2147483648)
 	{
 		write(1, "-2147483648", 11);
 		return (11);
 	}
 	_itoa(i, buffer, 10); /*here 10 means decimal*/
-	printf("buffer: %s\n", buffer);
 	write(1, buffer, _strlen(buffer)); /*strlen: long of buffer*/
 	return (_strlen(buffer));
 }
