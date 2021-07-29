@@ -22,7 +22,7 @@ More types of combinations are possible using the specifiers, to print strings, 
 ## _Compilation_ 🔗
 
 - Your code will be compiled this way: ```$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c```
-- The main file must include its main header file (holberton.h): ```#include holberton.h```
+- The main file must include its main header file (holberton.h): ```#include "holberton.h"```
 - Important, be careful not to place any c file other than main, because when compiling, this file will also be included.
 
 ## _Specifiers_ ▶️
