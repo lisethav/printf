@@ -10,20 +10,21 @@ int pr_di(va_list arg) /*if (*p == 'd' || *p == 'i' */
 	int i;
 	char buffer[1024];
 
-	i = va_arg(arg, int);
 	if (arg == NULL)
 	{
-		write(1, "Error\n", 6);
-		return (0);
+		return (-1);
 	}
-	if (i != 0)
+	i = va_arg(arg, int);
+	printf("i: %d\n", i);
+	if (i == -2147483648)
 	{
-		_itoa(i, buffer, 10); /*here 10 means decimal*/
-		write(1, buffer, _strlen(buffer)); /*strlen: long of buffer*/
+		write(1, "-2147483648", 11);
+		return (11);
 	}
-	else
-	write(1, "0", 1);
-	return (1);
+	_itoa(i, buffer, 10); /*here 10 means decimal*/
+	printf("buffer: %s\n", buffer);
+	write(1, buffer, _strlen(buffer)); /*strlen: long of buffer*/
+	return (_strlen(buffer));
 }
 /**
  * pr_o - Signed octal
@@ -40,8 +41,7 @@ int pr_o(va_list arg) /*if (*p == 'o')*/
 	i = va_arg(arg, int);
 	if (arg == NULL)
 	{
-		write(1, "Error\n", 6);
-		return (0);
+		return (-1);
 	}
 	s = _itoa(i, buffer, 8); /*converts integer 10 to octal*/
 	write(1, s, _strlen(s));

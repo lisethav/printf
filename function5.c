@@ -12,8 +12,7 @@ int pr_R(va_list arg) /* if (*p == 'r')*/
 
 	if (arg == NULL)
 	{
-		write(1, "Error\n", 6);
-		return (0);
+		return (-1);
 	}
 	buffer[0] = '%';
 	buffer[1] = 'r';

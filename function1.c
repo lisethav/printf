@@ -13,8 +13,7 @@ int pr_char(va_list arg) /* if (*p == 'c')*/
 	value = va_arg(arg, int); /*extracts int arg & stores as char type*/
 	if (arg == NULL)
 	{
-		write(1, "Error\n", 6);
-		return (0);
+		return (-1);
 	}
 	s = &value;
 	write(1, s, 1);
@@ -33,8 +32,7 @@ int pr_string(va_list arg) /* if (*p == 's')*/
 	s = va_arg(arg, char *);
 	if (s == NULL)
 	{
-		write(1, "Error\n", 6); /*string = NULL*/
-		return (0);
+		return (-1);
 	}
 	write(1, s, _strlen(s));
 	return (_strlen(s));

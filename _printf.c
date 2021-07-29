@@ -18,13 +18,11 @@ int _printf(const char *format, ...)
 	va_start(arg, format);
 	if (format == NULL)
 	{
-		write(1, "Error\n", 6);
-		exit(-1);
+		return (-1);
 	}
 	if (*format == '\0')
 	{
-		write(1, "vacío\0", 6);
-		exit(-1);
+		return (-1);
 	}
 	for (p = format; *p != '\0'; p++) /*p points to format address*/
 	{

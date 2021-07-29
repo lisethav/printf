@@ -43,6 +43,5 @@ int pr_ui(va_list __attribute__((unused))arg) /*if (*p == 'u')*/
  */
 int pr_zero(va_list __attribute__((unused))arg) /* if (*p == '\0') */
 {
-	write(1, "Error\n", 6);
-	return (0);
+	return (-1);
 }

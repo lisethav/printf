@@ -13,8 +13,7 @@ int pr_x(va_list arg) /* if (*p == 'x')*/
 	i = va_arg(arg, unsigned int);
 	if (arg == NULL)
 	{
-		write(1, "Error\n", 6);
-		return (0);
+		return (-1);
 	}
 	_itoa(i, buffer, 16); /*here 16 means hexadecimal*/
 	write(1, buffer, _strlen(buffer));
@@ -35,8 +34,7 @@ int pr_X(va_list arg) /*if (*p == 'X')*/
 	i = va_arg(arg, int);
 	if (arg == NULL)
 	{
-		write(1, "Error\n", 6);
-		return (0);
+		return (-1);
 	}
 	_itoa(i, buffer, 16); /*here 16 means hexadecimal*/
 	for (j = 0; buffer[j] != '\0'; j++) /*hexadecimal system*/
